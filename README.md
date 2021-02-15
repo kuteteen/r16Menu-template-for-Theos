@@ -18,6 +18,7 @@
   * Textfield Switch wide or right
   * Slider Switch
   * Index switch
+  * Hook Swith
 
 * Patcher and Patch switch is based on [KittyMemory](https://github.com/MJx0/KittyMemory)
   * Original bytes are <b>not</b> required
@@ -115,7 +116,31 @@ HOOK_NO_ORIG(@"0x102517FB251", Player_Update);
 ```obj-c
 [menu addIndexSwitch:@"Pick Damage" 
 	description:@"" 
-		 items:@[@"10", @"20", @"40", @"80", @"120", @"140"]];
+	items:@[@"10", @"20", @"40", @"80", @"120", @"140"]];
+```
+<b> Hook Switch: </b>
+```obj-c
+//adding one hook
+[menu addHookNamed:@"Aimbot"
+	description:NC_Encrypt("", 0) 
+	hook:@[[r16Hook hook:@"0x10276FB26"
+	with:(void *)Player_Update 
+	original:(void **)&_Player_Update]]];
+	
+//adding infinte :)
+[menu addHookNamed:@"Aimbot"
+	description:NC_Encrypt("", 0) 
+	hook:@[
+		[r16Hook hook:@"0x10276FB26"
+			with:(void *)Player_Update 
+			original:(void **)&_Player_Update], 
+		[r16Hook hook:@"0x10276FB26"
+			with:(void *)Player_Update 
+			original:(void **)&_Player_Update], 
+		[r16Hook hook:@"0x10276FB26"
+			with:(void *)Player_Update 
+			original:(void **)&_Player_Update]]
+	];
 ```
 <b> Checking if a switch is on:
 ```obj-c
@@ -150,7 +175,7 @@ float userValue1 = [menu getFloat:@"Switch Name"];
 ```
 
 ### Credits:
-* Me
+* Rednick16
 * [MJx0](https://github.com/MJx0)
   * For [KittyMemory](https://github.com/MJx0/KittyMemory)
 
