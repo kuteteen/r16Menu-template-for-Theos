@@ -48,6 +48,31 @@ menu.frameworkNamed = @"UnityFramework";
 
 ```
 
+<b> Patching variables</b>
+```obj-c
+//call these inside ur own custom functions
+*(int*)[UIKeyPatch address:@"0x78" ptr:ptr] = 999;
+*(bool*)[UIKeyPatch address:@"0x32" ptr:ptr] = true;
+*(float*)[UIKeyPatch address:@"0x56" ptr:ptr] = 999.0f;
+```
+<b> Hooking methods</b>
+```obj-c
+//toggle on or off
+[r16Hook toggleHook:true 
+	address:@"0x101C0E5F0" 
+	with:(void *)PlayerMoveC_Update 
+	original:(void **)&orig_PlayerMoveC_Update];
+				
+//without toggle
+[r16Hook hook:@"0x10276FB26"
+	with:(void *)Player_Update 
+	original:(void **)&_Player_Update];
+	
+//shmoos
+HOOK(@"0x102517FB251", Player_Update, orig_Player_Update);
+HOOK_NO_ORIG(@"0x102517FB251", Player_Update);
+```
+
 <b> Patching a plain offset: </b>
 ```obj-c
 [UIKeyPatch offset:@"0x104361010" byte:@"0xC0035FD6"];
@@ -60,37 +85,37 @@ menu.frameworkNamed = @"UnityFramework";
 
 <b> Patcher switch: </b>
 ```obj-c
-    [menu addPatcherSwitch:@"Custom Patch #1"];
+[menu addPatcherSwitch:@"Custom Patch #1"];
 ```
 
 <b> Plain Switch: </b>
 ```obj-c
-		[menu addSwitch:@"Mana" 
-			  description:@"Infinite mana"];
+[menu addSwitch:@"Mana" 
+	description:@"Infinite mana"];
 ```
 <b> Textfield Switch Right: </b>
 ```obj-c
-    [menu addTextfieldRight:@"Set Weapon:" 
+[menu addTextfieldRight:@"Set Weapon:" 
         description:@""];
 ```
 <b> Textfield Switch Wide: </b>
 ```obj-c
-    [menu addTextfieldWide:@"Chat Spam:" 
-        description:@""];
+[menu addTextfieldWide:@"Chat Spam:" 
+      	description:@""];
 ```
 <b> Slider Switch: </b>
 ```obj-c
-		[menu addSlider:@"Custom Fov"
-          description:@"" 
+[menu addSlider:@"Custom Fov"
+ 	description:@"" 
              initialValue:1.00 
              minValue:1.00 
              maxValue:200.00];	
 ```
 <b> Index Switch: </b>
 ```obj-c
-    [menu addIndexSwitch:@"Pick Damage" 
-			  description:@"" 
-				  items:@[@"10", @"20", @"40", @"80", @"120", @"140"]];
+[menu addIndexSwitch:@"Pick Damage" 
+	description:@"" 
+		 items:@[@"10", @"20", @"40", @"80", @"120", @"140"]];
 ```
 <b> Checking if a switch is on:
 ```obj-c
@@ -134,4 +159,4 @@ float userValue1 = [menu getFloat:@"Switch Name"];
 ### Contact:
 If you find a bug in this beta version hit me up
 Don't spam me.
-<br> <b>Discord:</b> Red16#0309
+<br> <b>Discord:</b> Red16#6558
