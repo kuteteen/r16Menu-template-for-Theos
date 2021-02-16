@@ -86,7 +86,7 @@ HOOK_NO_ORIG(@"0x102517FB251", Player_Update);
 
 <b> Patcher switch: </b>
 ```obj-c
-[menu addPatcherSwitch:@"Custom Patch #1"];
+[menu addPatcher:@"Custom Patch #1"];
 ```
 
 <b> Plain Switch: </b>
@@ -122,14 +122,14 @@ HOOK_NO_ORIG(@"0x102517FB251", Player_Update);
 ```obj-c
 //adding one hook
 [menu addHookNamed:@"Aimbot"
-	description:NC_Encrypt("", 0) 
+	description:@"" 
 	hook:@[[r16Hook hook:@"0x10276FB26"
 	with:(void *)Player_Update 
 	original:(void **)&_Player_Update]]];
 	
 //adding infinte :)
 [menu addHookNamed:@"Aimbot"
-	description:NC_Encrypt("", 0) 
+	description:@"" 
 	hook:@[
 		[r16Hook hook:@"0x10276FB26"
 			with:(void *)Player_Update 
