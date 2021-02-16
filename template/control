@@ -1,0 +1,10 @@
+Package: @@PACKAGENAME@@
+Name: @@APPNAME@@ Modmenu
+Depends: mobilesubstrate, com.rednick16.r16menu
+Version: @@APPVERSION@@
+Architecture: iphoneos-arm
+Description: @@APPNAME@@ Menu by @@USER@@!
+Maintainer: @@USER@@
+Author: @@USER@@
+Section: Tweaks
+Homepage: @@SITE@@
