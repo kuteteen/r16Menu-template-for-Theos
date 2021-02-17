@@ -3,7 +3,7 @@
 <div style="text-align: center;">
 <b>Image of the menu:</b><br>
 
-<img src="https://media.discordapp.net/attachments/746474520692654121/810683842590801950/image0.png?width=359&height=352">
+<img src="https://i.ibb.co/cQMLbhT/AEB6-DB02-AA9-B-4977-91-E7-B6007799-CC2-B.png">
 </div>
 
 <br>
