@@ -1,4 +1,5 @@
 # r16Menu Template for Theos!
+[TWEAK.XM]https://github.com/Rednick16/r16Menu-Projects/blob/main/Terraria/Tweak.xm
 
 <div style="text-align: center;">
 <b>Image of the menu:</b><br>
