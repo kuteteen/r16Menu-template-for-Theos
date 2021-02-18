@@ -95,11 +95,11 @@ HOOK_NO_ORIG(@"0x102517FB251", Player_Update);
       description:@"" 
   	offsets:@[@"0x101C350C8"]
         hexPatches:@[@"C0035FD6"]];
-	
+	//or
 [menu addPatch:@"Godmode"
       description:@"" 
   	offsets:@[@"0x101C350C8", @"0x101C35052"]
-        hexPatches:@[@"C0035FD6", @"C0035FD6"]];	
+        hexPatches:@[@"0xC0035FD6", @"0xC0035FD6"]];	
 ```
 
 <b> Plain Switch: </b>
