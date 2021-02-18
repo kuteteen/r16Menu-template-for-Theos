@@ -89,6 +89,18 @@ HOOK_NO_ORIG(@"0x102517FB251", Player_Update);
 ```obj-c
 [menu addPatcher:@"Custom Patch #1"];
 ```
+<b>Patch Switch <b/>
+```obj-c
+[menu addPatch:@"Godmode"
+      description:@"" 
+  	offsets:@[@"0x101C350C8"]
+        hexPatches:@[@"C0035FD6"]];
+	
+[menu addPatch:@"Godmode"
+      description:@"" 
+  	offsets:@[@"0x101C350C8", @"0x101C35052"]
+        hexPatches:@[@"C0035FD6", @"C0035FD6"]];	
+```
 
 <b> Plain Switch: </b>
 ```obj-c
